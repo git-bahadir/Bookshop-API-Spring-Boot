@@ -1,0 +1,334 @@
+{
+	"info": {
+		"_postman_id": "479bc445-71af-4030-973d-173e0a118721",
+		"name": "book",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/api/v1/books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/books",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/v1/books?author=xa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/books?author=xa",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "xa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/v1/books/find?isbn=12",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var current_timestamp = new Date();",
+							"postman.setEnvironmentVariable(\"current_timestamp\", current_timestamp.toISOString());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"isbn\":12,\n    \"title\":\"a\",\n    \"author\":\"x\",\n    \"price\":2.3,\n    \"currency\": 0,\n    \"publisher\": \"qa\",\n    \"datePublished\": \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/books/find?isbn=12",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"find"
+					],
+					"query": [
+						{
+							"key": "isbn",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/v1/books/find?id=14ecbeaa-9304-4fc4-ab0f-43b3dbea2b20",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var current_timestamp = new Date();",
+							"postman.setEnvironmentVariable(\"current_timestamp\", current_timestamp.toISOString());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"isbn\":12,\n    \"title\":\"a\",\n    \"author\":\"x\",\n    \"price\":2.3,\n    \"currency\": 0,\n    \"publisher\": \"qa\",\n    \"datePublished\": \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/books/find?id=14ecbeaa-9304-4fc4-ab0f-43b3dbea2b20",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"find"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "14ecbeaa-9304-4fc4-ab0f-43b3dbea2b20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/v1/books",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var current_timestamp = new Date();",
+							"postman.setEnvironmentVariable(\"current_timestamp\", current_timestamp.toISOString());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"isbn\":1,\n    \"title\":\"a112111\",\n    \"author\":\"xa\",\n    \"price\":2.3,\n    \"currency\": 0,\n    \"publisher\": \"qa\",\n    \"datePublished\": \"{{current_timestamp}}\",\n    \"stock\": 3,\n    \"isActive\": true,\n    \"tags\": [1,5,2]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/books",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/v1/books/16b0f313-23c3-4fe2-8f1d-9612a29d16d5/update",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var current_timestamp = new Date();",
+							"postman.setEnvironmentVariable(\"current_timestamp\", current_timestamp.toISOString());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"isbn\":33333333,\n    \"title\":\"cvcvcvcvcvvc\",\n    \"author\":\"xa\",\n    \"price\":2.3,\n    \"currency\": 0,\n    \"publisher\": \"qa\",\n    \"datePublished\": \"{{current_timestamp}}\",\n    \"stock\": 3,\n    \"isActive\": true,\n    \"tags\": [1,5,2]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/books/16b0f313-23c3-4fe2-8f1d-9612a29d16d5/update",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"16b0f313-23c3-4fe2-8f1d-9612a29d16d5",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/v1/books/7a8f0cfa-9253-48e1-bbac-9866d38e162c/update/stock?stock=50",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var current_timestamp = new Date();",
+							"postman.setEnvironmentVariable(\"current_timestamp\", current_timestamp.toISOString());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"isbn\":33333333,\n    \"title\":\"cvcvcvcvcvvc\",\n    \"author\":\"xa\",\n    \"price\":2.3,\n    \"currency\": 0,\n    \"publisher\": \"qa\",\n    \"datePublished\": \"{{current_timestamp}}\",\n    \"stock\": 3,\n    \"isActive\": true,\n    \"tags\": [1,5,2]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/books/7a8f0cfa-9253-48e1-bbac-9866d38e162c/update/stock?stock=50",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"7a8f0cfa-9253-48e1-bbac-9866d38e162c",
+						"update",
+						"stock"
+					],
+					"query": [
+						{
+							"key": "stock",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/v1/books/b4d9a0bd-b042-4a89-8fa2-0c3605bf101a/delete",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var current_timestamp = new Date();",
+							"postman.setEnvironmentVariable(\"current_timestamp\", current_timestamp.toISOString());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"isbn\":33333333,\n    \"title\":\"cvcvcvcvcvvc\",\n    \"author\":\"xa\",\n    \"price\":2.3,\n    \"currency\": 0,\n    \"publisher\": \"qa\",\n    \"datePublished\": \"{{current_timestamp}}\",\n    \"stock\": 3,\n    \"isActive\": true,\n    \"tags\": [1,5,2]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/books/b4d9a0bd-b042-4a89-8fa2-0c3605bf101a/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"b4d9a0bd-b042-4a89-8fa2-0c3605bf101a",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
